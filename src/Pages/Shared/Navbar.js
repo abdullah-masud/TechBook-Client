@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/blogs'>Blogs</Link></li>
-        <li><Link to='/write'>Write</Link></li>
-        <li><Link to='/about'>About</Link></li>
+        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-sm"><Link to='/'>Home</Link></li>
+        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-sm"><Link to='/blogs'>Blogs</Link></li>
+        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-sm"><Link to='/write'>Write</Link></li>
+        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-sm"><Link to='/about'>About</Link></li>
     </>
     return (
-        <div className="navbar bg-base-100 max-w-7xl mx-auto border">
+        <div className="navbar bg-base-100 max-w-7xl mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabindex="0" className="btn btn-ghost lg:hidden">
