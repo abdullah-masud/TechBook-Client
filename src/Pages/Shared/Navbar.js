@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const menuItems = <>
-        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-sm"><Link to='/'>Home</Link></li>
-        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-sm"><Link to='/blogs'>Blogs</Link></li>
-        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-sm"><Link to='/write'>Write</Link></li>
-        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-sm"><Link to='/about'>About</Link></li>
+        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-base mr-6"><Link to='/'>Home</Link></li>
+        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-base mr-6"><Link to='/blogs'>Blogs</Link></li>
+        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-base mr-6"><Link to='/write'>Write</Link></li>
+        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-base"><Link to='/about'>About</Link></li>
     </>
     return (
         <div className="navbar bg-base-100 max-w-7xl mx-auto">
@@ -18,10 +18,10 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">TechBook</Link>
+                <Link to='/' className="normal-case text-xl font-bold">TechBook</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+                <ul className=" menu-horizontal p-0">
                     {menuItems}
                 </ul>
             </div>
