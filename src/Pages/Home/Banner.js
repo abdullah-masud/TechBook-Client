@@ -1,10 +1,10 @@
 import React from 'react';
-import banner from '../../assets/images/banner3.png'
+import bgBanner from '../../assets/images/banner3.png'
 import heroImage from '../../assets/images/heroImage.jpg'
 
 const Banner = () => {
     return (
-        <div className="hero min-h-screen " style={{ backgroundImage: `url(${banner})` }}>
+        <div className="hero min-h-screen " style={{ backgroundImage: `url(${bgBanner})` }}>
             <div className="flex flex-col items-center w-3/4 lg:flex-row-reverse">
                 <img src={heroImage} className="lg:max-w-2xl max-w-xs  rounded-lg shadow-2xl " alt='' />
                 <div className='lg:mr-28'>
