@@ -1,11 +1,9 @@
 import React from 'react';
-import './Categories3.css'
-import road from '../../assets/images/road.jpg'
-import mountain from '../../assets/images/mountain.jpg'
-import ballon from '../../assets/images/balloon.jpg'
-import { Link } from 'react-router-dom';
+import road from '../../../assets/images/road.jpg'
+import './Categories.css'
 
-const Categories3 = () => {
+
+const Categories = () => {
     return (
         <div className='max-w-7xl mx-auto my-12'>
             <h1 className='text-4xl font-bold'>Categories</h1>
@@ -41,4 +39,4 @@ const Categories3 = () => {
     );
 };
 
-export default Categories3;
+export default Categories;

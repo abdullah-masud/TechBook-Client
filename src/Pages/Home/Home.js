@@ -1,17 +1,12 @@
 import React from 'react';
 import Banner from './Banner';
-import Blogs from './Blogs';
-import Categories from './Categories';
-import Categories2 from './Categories2';
-import Categories3 from './Categories3';
+import Categories from './Categories/Categories';
 
 const Home = () => {
     return (
         <div>
             <Banner />
-            {/* <Categories /> */}
-            {/* <Categories2 /> */}
-            <Categories3 />
+            <Categories />
         </div>
     );
 };
