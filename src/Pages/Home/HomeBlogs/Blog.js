@@ -1,26 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import blogStyle from './Blog.module.css'
 
 const Blog = ({ blog }) => {
     const { title, image, description, category } = blog;
     return (
         <div className=''>
-            <div class={`${blogStyle.blogCard}  max-w-6xl`}>
-                <div class={`${blogStyle.meta}`}>
-                    <div class={blogStyle.photo}
+            <div className={`${blogStyle.blogCard}  max-w-6xl`}>
+                <div className={`${blogStyle.meta}`}>
+                    <div className={blogStyle.photo}
                         style={{
                             backgroundImage: `url(${image})`
                         }}
                     ></div>
-                    <ul class={blogStyle.details}>
+                    <ul className={blogStyle.details}>
                     </ul>
                 </div>
-                <div class={blogStyle.description}>
+                <div className={blogStyle.description}>
                     <h1>{title}</h1>
                     <h2>{category}</h2>
                     <p>{description.slice(0, 120)}</p>
-                    <p class={`${blogStyle.readMore} `}>
-                        <a href="#">Read More</a>
+                    <p className={`${blogStyle.readMore} `}>
+                        <Link to=''>Read More</Link>
                     </p>
                 </div>
             </div>

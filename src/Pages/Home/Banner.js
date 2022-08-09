@@ -10,10 +10,10 @@ const Banner = () => {
                 <div className='lg:mr-28'>
                     <h1 className="lg:text-6xl lg:w-full w-80 lg:mt-0 mt-3 text-3xl font-bold">Share Your <br />Thoughts Here</h1>
                     <p className='my-5 text-lg font-semibold'>A Website that Connects Writers and Readers</p>
-                    <a href="#_" class="lg:ml-1 relative inline-block px-4 py-2 font-medium group">
-                        <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-primary group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-                        <span class="absolute inset-0 w-full h-full bg-primary border-2 border-primary group-hover:bg-primary"></span>
-                        <span class="relative text-[#ffff] group-hover:text-[#ffff]">Get Started</span>
+                    <a href="#_" className="lg:ml-1 relative inline-block px-4 py-2 font-medium group">
+                        <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-primary group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                        <span className="absolute inset-0 w-full h-full bg-primary border-2 border-primary group-hover:bg-primary"></span>
+                        <span className="relative text-[#ffff] group-hover:text-[#ffff]">Get Started</span>
                     </a>
                 </div>
             </div>

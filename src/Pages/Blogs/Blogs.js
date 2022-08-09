@@ -6,7 +6,7 @@ const Blogs = () => {
     const [blogs] = useBlogs()
 
     return (
-        <div className='flex lg:flex-row flex-col-reverse min-h-screen max-w-7xl mx-auto my-12'>
+        <div className='flex lg:flex-row flex-col-reverse min-h-screen max-w-7xl mx-auto my-12 justify-center'>
             <div className='px-3'>
                 {
                     blogs.map(blog => <Blog
@@ -15,7 +15,7 @@ const Blogs = () => {
                     />)
                 }
             </div>
-            <div class="lg:divider lg:divider-horizontal"></div>
+            <div className="lg:divider lg:divider-horizontal"></div>
             <div className='flex flex-row lg:justify-start justify-center lg:flex-col gap-3 lg:mt-4'>
                 <button className='btn btn-xs btn-outline btn-primary'>All</button>
                 <button className='btn btn-xs btn-outline btn-primary'>Programming</button>

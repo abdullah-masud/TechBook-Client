@@ -2,7 +2,7 @@ import React from 'react';
 
 const Write = () => {
     return (
-        <div>
+        <div className='min-h-screen'>
             <h2>User can write blog</h2>
         </div>
     );
