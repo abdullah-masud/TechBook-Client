@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import useBlogs from '../../../hooks/useBlogs';
 import Blog from './Blog';
 
 const HomeBlogs = () => {
-    const [blogs, setBlogs] = useState([])
+    const [blogs] = useBlogs()
 
-    useEffect(() => {
-        fetch('blogs.json')
-            .then(res => res.json())
-            .then(data => setBlogs(data))
-    }, [])
+    const navigate = useNavigate();
+
+    const handleSeeMore = () => {
+        navigate(`/blogs`)
+        window.scrollTo(0, 0)
+    }
 
     return (
         <div className='max-w-7xl mx-auto lg:mt-24 mt-12 lg:mb-0 mb-12 '>
@@ -22,12 +25,12 @@ const HomeBlogs = () => {
                 }
             </div>
             <div className='flex justify-center lg:mt-0 my-4'>
-                <a href="#_" class=" relative inline-block px-4 py-2 font-medium group">
-                    <span class=" absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#0b4553] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-                    <span class="absolute inset-0 w-full h-full bg-white border-2 border-[#2B4865] group-hover:bg-[#0b4553]"></span>
-                    <span class="relative text-[#0b4553] group-hover:text-white">See More
+                <button onClick={handleSeeMore} class="relative inline-block px-4 py-2 font-medium group">
+                    <span class=" .absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-primary group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span class="absolute inset-0 w-full h-full bg-white border-2 border-primary group-hover:bg-primary"></span>
+                    <span class="relative text-primary group-hover:text-white">See More
                     </span>
-                </a>
+                </button>
             </div>
         </div>
     );

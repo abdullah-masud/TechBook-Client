@@ -5,7 +5,7 @@ const Blog = ({ blog }) => {
     const { title, image, description, category } = blog;
     return (
         <div className=''>
-            <div class={`${blogStyle.blogCard} border max-w-6xl`}>
+            <div class={`${blogStyle.blogCard}  max-w-6xl`}>
                 <div class={`${blogStyle.meta}`}>
                     <div class={blogStyle.photo}
                         style={{
