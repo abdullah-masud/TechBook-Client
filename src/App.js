@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home'
 import Blogs from './Pages/Blogs/Blogs';
 import Write from './Pages/Write/Write';
 import About from './Pages/About/About';
+import Footer from './Pages/Shared/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='write' element={<Write />} />
         <Route path='about' element={<About />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
