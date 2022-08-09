@@ -4,9 +4,9 @@ import heroImage from '../../assets/images/heroImage.jpg'
 
 const Banner = () => {
     return (
-        <div className="hero min-h-screen " style={{ backgroundImage: `url(${bgBanner})` }}>
-            <div className="flex flex-col items-center w-3/4 lg:flex-row-reverse">
-                <img src={heroImage} className="lg:max-w-2xl max-w-xs  rounded-lg shadow-2xl " alt='' />
+        <div className="hero  " style={{ backgroundImage: `url(${bgBanner})` }}>
+            <div className="flex flex-col items-center w-3/4 lg:flex-row-reverse py-12 max-w-7xl mx-auto">
+                <img src={heroImage} className="lg:max-w-xl md:max-w-md max-w-xs  rounded-lg shadow-2xl " alt='' />
                 <div className='lg:mr-28'>
                     <h1 className="lg:text-6xl lg:w-full w-80 lg:mt-0 mt-3 text-3xl font-bold">Share Your Thoughts Here</h1>
                     <p className='my-5 text-lg font-semibold'>A Website that Connects Writers and Readers</p>
