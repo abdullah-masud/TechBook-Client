@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Blog from './Blog';
 
-const Blogs = () => {
+const HomeBlogs = () => {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
@@ -11,7 +11,7 @@ const Blogs = () => {
     }, [])
 
     return (
-        <div className='max-w-7xl mx-auto min-h-screen lg:mt-24 mt-12 lg:mb-0 mb-12'>
+        <div className='max-w-7xl mx-auto lg:mt-24 mt-12 lg:mb-0 mb-12 '>
             <h2 className='text-5xl font-bold text-center my-9'>Blogs</h2>
             <div className='grid px-3'>
                 {
@@ -33,4 +33,4 @@ const Blogs = () => {
     );
 };
 
-export default Blogs;
+export default HomeBlogs;
