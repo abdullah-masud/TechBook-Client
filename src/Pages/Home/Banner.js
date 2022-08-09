@@ -1,5 +1,5 @@
 import React from 'react';
-import bgBanner from '../../assets/images/banner3.png'
+import bgBanner from '../../assets/images/banner.png'
 import heroImage from '../../assets/images/heroImage.jpg'
 
 const Banner = () => {
