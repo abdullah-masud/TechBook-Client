@@ -7,7 +7,7 @@ import categoriesStyle from './Categories.module.css'
 
 const Categories = () => {
     return (
-        <div className='max-w-7xl mx-auto lg:my-16 my-10'>
+        <div className='max-w-7xl mx-auto lg:my-10 my-10'>
             <h1 className='text-5xl font-bold text-center'>Categories</h1>
             <div className='wrapper flex lg:justify-around lg:flex-row flex-col my-12 gap-10  lg:px-0 px-4'>
                 <div className={`${categoriesStyle.card} card`}>
