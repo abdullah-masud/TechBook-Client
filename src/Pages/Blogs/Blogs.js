@@ -7,7 +7,7 @@ const Blogs = () => {
 
     return (
         <div className='flex lg:flex-row flex-col-reverse min-h-screen max-w-7xl mx-auto my-12 justify-center'>
-            <div className='px-3'>
+            <div className='grid px-3'>
                 {
                     blogs.map(blog => <Blog
                         key={blog.id}

@@ -10,11 +10,11 @@ const Categories = () => {
         <div className='max-w-7xl mx-auto lg:my-10 my-10'>
             <h1 className='text-5xl font-bold text-center'>Categories</h1>
             <div className='wrapper flex lg:justify-around lg:flex-row flex-col my-12 gap-10  lg:px-0 px-4'>
-                <div className={`${categoriesStyle.card} card`}>
+                <div className={`${categoriesStyle.card} card `}>
                     <img src={programming} alt="" />
                     <div className={categoriesStyle.info}>
                         <h1 className='text-3xl font-bold'>Programming</h1>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quia.</p>
+                        <p>Blogs for Programming to Sharpen Your Coding Skills.</p>
                         <button className={`${categoriesStyle.btn} btn border-none text-white`}>Explore</button>
                     </div>
                 </div>

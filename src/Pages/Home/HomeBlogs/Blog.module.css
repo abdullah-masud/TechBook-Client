@@ -130,6 +130,7 @@ body {
 
 .blogCard .description .readMore {
     text-align: right;
+    margin-top: 20px;
 }
 
 .blogCard .description .readMore a {

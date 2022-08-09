@@ -21,7 +21,7 @@ const Blog = ({ blog }) => {
                     <h2>{category}</h2>
                     <p>{description.slice(0, 120)}</p>
                     <p className={`${blogStyle.readMore} `}>
-                        <Link to=''>Read More</Link>
+                        <Link to=''>Continue Reading</Link>
                     </p>
                 </div>
             </div>
