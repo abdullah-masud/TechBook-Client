@@ -14,7 +14,7 @@ const Categories = () => {
                     <img src={programming} alt="" />
                     <div className={categoriesStyle.info}>
                         <h1 className='text-3xl font-bold'>Programming</h1>
-                        <p>Blogs for Programming to Sharpen Your Coding Skills.</p>
+                        <p>Blogs on Programming to Improve your Coding Skills and Problem-Solving Abilities.</p>
                         <button className={`${categoriesStyle.btn} btn border-none text-white`}>Explore</button>
                     </div>
                 </div>
@@ -23,7 +23,7 @@ const Categories = () => {
                     <img src={food} alt="" />
                     <div className={categoriesStyle.info}>
                         <h1 className='text-3xl font-bold'>Food</h1>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quia.</p>
+                        <p>Recipes that are both Delicious and Healthy for all Food Lovers.</p>
                         <button className={`${categoriesStyle.btn} btn border-none text-white`}>Explore</button>
                     </div>
                 </div>
@@ -32,7 +32,7 @@ const Categories = () => {
                     <img src={travel} alt="" />
                     <div className={categoriesStyle.info}>
                         <h1 className='text-3xl font-bold'>Travel</h1>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quia.</p>
+                        <p>Featuring the Best International Travel Gear and Low-Cost Travel Advice.</p>
                         <button className={`${categoriesStyle.btn} btn border-none text-white`}>Explore</button>
                     </div>
                 </div>

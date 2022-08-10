@@ -1,9 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import blogStyle from './Blog.module.css'
 
 const Blog = ({ blog }) => {
-    const { title, image, description, category } = blog;
+    const { id, title, image, description, category } = blog;
+
+    const navigate = useNavigate();
+    const navigateToContinueReading = (id) => {
+        navigate(`/fullBlog/${id}`);
+    }
+
     return (
         <div className=''>
             <div className={`${blogStyle.blogCard}  max-w-6xl`}>
@@ -21,7 +27,7 @@ const Blog = ({ blog }) => {
                     <h2>{category}</h2>
                     <p>{description.slice(0, 120)}</p>
                     <p className={`${blogStyle.readMore} `}>
-                        <Link to=''>Continue Reading</Link>
+                        <button onClick={() => navigateToContinueReading(id)}>Continue Reading</button>
                     </p>
                 </div>
             </div>

@@ -133,9 +133,9 @@ body {
     margin-top: 20px;
 }
 
-.blogCard .description .readMore a {
+.blogCard .description .readMore {
     color: #0b4553;
-    display: inline-block;
+    /* display: inline-block; */
     position: relative;
     font-weight: 600;
 }
@@ -150,7 +150,7 @@ body {
 }
 */
 
-.blogCard .description .readMore a:hover {
+.blogCard .description .readMore:hover {
     margin-left: 5px;
     color: #1D9696;
     opacity: 1;

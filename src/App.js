@@ -6,6 +6,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import Write from './Pages/Write/Write';
 import About from './Pages/About/About';
 import Footer from './Pages/Shared/Footer';
+import FullBlog from './Pages/FullBlog/FullBlog';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='blogs' element={<Blogs />} />
         <Route path='write' element={<Write />} />
         <Route path='about' element={<About />} />
+        <Route path='fullBlog/:blogId' element={<FullBlog />} />
       </Routes>
       <Footer />
     </div>
