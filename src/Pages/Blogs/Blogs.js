@@ -5,6 +5,8 @@ import Blog from '../Home/HomeBlogs/Blog';
 const Blogs = () => {
     const [blogs] = useBlogs()
 
+    const filteredBlogs = blogs?.filter(blog => blog.category === 'food');
+    console.log(filteredBlogs)
 
     return (
         <div className='flex lg:flex-row flex-col-reverse min-h-screen max-w-7xl mx-auto my-12 justify-center'>

@@ -26,7 +26,7 @@ const Blog = ({ blog }) => {
                 <div className={blogStyle.description}>
                     <h1>{title}</h1>
                     <h2>{category}</h2>
-                    <p>{description.slice(0, 120)}</p>
+                    <p>{description?.slice(0, 120)}</p>
                     <p className={`${blogStyle.readMore} `}>
                         <button onClick={() => navigateToFullBlog(_id)}>Continue Reading</button>
                     </p>

@@ -9,7 +9,7 @@ const useBlogs = () => {
             .then(data => setBlogs(data))
     }, [])
 
-    return [blogs];
+    return [blogs, setBlogs];
 }
 
 export default useBlogs
