@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import blogStyle from './Blog.module.css'
 
 const Blog = ({ blog }) => {
-    const { id, title, image, description, category } = blog;
+    const { _id, title, image, description, category } = blog;
 
     const navigate = useNavigate();
-    const navigateToContinueReading = (id) => {
+    const navigateToFullBlog = (id) => {
         navigate(`/fullBlog/${id}`);
+        window.scrollTo(0, 0)
     }
 
     return (
@@ -27,7 +28,7 @@ const Blog = ({ blog }) => {
                     <h2>{category}</h2>
                     <p>{description.slice(0, 120)}</p>
                     <p className={`${blogStyle.readMore} `}>
-                        <button onClick={() => navigateToContinueReading(id)}>Continue Reading</button>
+                        <button onClick={() => navigateToFullBlog(_id)}>Continue Reading</button>
                     </p>
                 </div>
             </div>
