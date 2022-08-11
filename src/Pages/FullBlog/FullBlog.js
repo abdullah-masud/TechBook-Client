@@ -5,7 +5,7 @@ const FullBlog = () => {
     const { blogId } = useParams();
 
     return (
-        <div>
+        <div className='min-h-screen'>
             <h1>Full Blog : {blogId} </h1>
         </div>
     );
