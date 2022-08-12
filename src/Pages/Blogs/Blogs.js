@@ -1,10 +1,16 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import useBlogs from '../../hooks/useBlogs';
 import Blog from '../Home/HomeBlogs/Blog';
 
 const Blogs = () => {
-    const [blogs, setBlogs] = useBlogs()
+    const [blogs, setBlogs] = useBlogs();
+
+    /*  let { category } = useParams();
+     console.log(blogs) */
 
     const getFilteredBlogs = (category) => {
+        console.log(category)
         const blogCategory = category
         const url = `http://localhost:5000/categoryblogs?category=${blogCategory}`;
         fetch(url)
@@ -18,6 +24,12 @@ const Blogs = () => {
             .then(res => res.json())
             .then(data => setBlogs(data))
     }
+
+    /* const url = `http://localhost:5000/categoryblogs?category=${category}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => setBlogs(data)) */
+
 
     return (
         <div className='flex lg:flex-row flex-col-reverse min-h-screen max-w-7xl mx-auto my-12 justify-center'>

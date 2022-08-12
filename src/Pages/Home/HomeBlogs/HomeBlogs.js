@@ -19,7 +19,7 @@ const HomeBlogs = () => {
             <div className='grid px-3'>
                 {
                     blogs.slice(0, 3).map(blog => <Blog
-                        key={blog.id}
+                        key={blog._id}
                         blog={blog}
                     />)
                 }

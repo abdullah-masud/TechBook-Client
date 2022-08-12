@@ -16,4 +16,6 @@ export default useBlogs
 
 /* fetch('http://localhost:5000/allblogs')
             .then(res => res.json())
-            .then(data => setBlogs(data)) */
+            .then(data => setBlogs(data)) 
+            
+*/
