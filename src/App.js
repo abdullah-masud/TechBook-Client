@@ -7,7 +7,8 @@ import Write from './Pages/Write/Write';
 import About from './Pages/About/About';
 import Footer from './Pages/Shared/Footer';
 import FullBlog from './Pages/FullBlog/FullBlog';
-import useBlogs from './hooks/useBlogs';
+import Login from './Pages/Login/Login';
+import Signup from './Pages/Login/Signup';
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
         <Route path='write' element={<Write />} />
         <Route path='about' element={<About />} />
         <Route path='fullBlog/:blogId' element={<FullBlog />} />
+        <Route path='login' element={<Login />} />
+        <Route path='signup' element={<Signup />} />
       </Routes>
       <Footer />
     </div>
