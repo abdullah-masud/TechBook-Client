@@ -3,11 +3,9 @@ import food from '../../../assets/images/food.jpg'
 import travel from '../../../assets/images/travel.jpg'
 import programming from '../../../assets/images/programming.jpg'
 import categoriesStyle from './Categories.module.css'
-import { useNavigate, useParams } from 'react-router-dom';
-import useBlogs from '../../../hooks/useBlogs';
+import { useNavigate } from 'react-router-dom';
 
 const Categories = () => {
-    const [blogs, setBlogs] = useBlogs();
     const navigate = useNavigate();
 
     const navigateToBlogs = (blogCategory) => {
