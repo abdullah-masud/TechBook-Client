@@ -9,6 +9,9 @@ import Footer from './Pages/Shared/Footer';
 import FullBlog from './Pages/FullBlog/FullBlog';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/Login/Signup';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import RequireAuth from './Pages/Shared/RequireAuth';
 
 function App() {
 
@@ -19,12 +22,13 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='blogs' element={<Blogs />} />
         <Route path='blogs/:category' element={<Blogs />} />
-        <Route path='write' element={<Write />} />
+        <Route path='write' element={<RequireAuth><Write /></RequireAuth>} />
         <Route path='about' element={<About />} />
         <Route path='fullBlog/:blogId' element={<FullBlog />} />
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<Signup />} />
       </Routes>
+      <ToastContainer />
       <Footer />
     </div>
   );
