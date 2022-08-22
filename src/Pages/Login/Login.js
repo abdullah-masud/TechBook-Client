@@ -54,7 +54,7 @@ const Login = () => {
     }
 
     return (
-        <div className='px-2 flex min-h-screen justify-center items-center' /* style={{ backgroundImage: `url(${loginbg})` }} */>
+        <div className='px-2 flex min-h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl ">
                 <div className="card-body">
                     <h2 className="card-title text-center block">Login</h2>
@@ -129,7 +129,7 @@ const Login = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

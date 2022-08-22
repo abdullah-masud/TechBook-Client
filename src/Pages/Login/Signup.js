@@ -7,12 +7,15 @@ import { FcGoogle } from "react-icons/fc";
 import Loading from '../Shared/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useUser from '../../hooks/useUser';
 
 const Signup = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit, getValues } = useForm();
     const [createUserWithEmailAndPassword, emailUser, emailLoading, emailError] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const [user] = useUser(googleUser || emailUser);
 
     let errorElement;
     const navigate = useNavigate();
@@ -27,14 +30,17 @@ const Signup = () => {
         errorElement = <p className='text-red-500'><small>{emailError?.message || googleError?.message || updateError?.message}</small></p>
     }
 
-    if (googleUser || emailUser) {
+    if (user) {
         navigate(from, { replace: true });
+
     }
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
     };
+
+
 
     return (
         <div className=' px-2 flex min-h-screen justify-center items-center' /* style={{ backgroundImage: `url(${loginbg})` }} */>
