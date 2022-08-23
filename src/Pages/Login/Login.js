@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import Loading from '../Shared/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useUser from '../../hooks/useUser';
 
 const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -19,16 +20,18 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
+    const [user] = useUser(googleUser || emailUser);
+
     let errorElement;
     const navigate = useNavigate();
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if (googleUser || emailUser) {
+        if (user) {
             navigate(from, { replace: true });
         }
-    }, [googleUser, emailUser, from, navigate])
+    }, [user, emailUser, from, navigate])
 
     if (emailLoading || googleLoading || sending) {
         return <Loading />

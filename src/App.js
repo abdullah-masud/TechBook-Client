@@ -25,7 +25,6 @@ function App() {
         <Route path='blogs' element={<Blogs />} />
         <Route path='blogs/:category' element={<Blogs />} />
         <Route path='write' element={<RequireAuth><Write /></RequireAuth>} />
-        <Route path='about' element={<About />} />
         <Route path='fullBlog/:blogId' element={<FullBlog />} />
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<Signup />} />

@@ -14,22 +14,32 @@ const MyBlogs = () => {
     }, [myBlogs, user?.email])
 
 
-    return (
-        <div className='min-h-screen max-w-7xl mx-auto justify-center'>
-            <h2 className='text-3xl font-semibold text-center text-primary mt-10 lg:mb-12 mb-4'>My Blogs</h2>
-            <div className='grid px-3'>
-                {
-                    myBlogs?.map(blog => <MyBlog
-                        key={blog._id}
-                        blog={blog}
-                        myBlogs={myBlogs}
-                        setMyBlogs={setMyBlogs}
-                    />).reverse()
-                }
-            </div>
 
-        </div>
-    );
+    if (myBlogs?.length !== 0) {
+        return (
+            <div className='min-h-screen max-w-7xl mx-auto justify-center'>
+                <h2 className='text-3xl font-semibold text-center text-primary mt-10  mb-4'>My Blogs</h2>
+                <div className='grid px-3'>
+                    {
+                        myBlogs?.map(blog => <MyBlog
+                            key={blog._id}
+                            blog={blog}
+                            myBlogs={myBlogs}
+                            setMyBlogs={setMyBlogs}
+                        />).reverse()
+                    }
+                </div>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div className='min-h-screen max-w-7xl mx-auto justify-center'>
+                <h2 className='text-3xl font-semibold text-center text-primary mt-10  mb-4'>No Blogs Available</h2>
+            </div>
+        )
+    }
+
 
 };
 

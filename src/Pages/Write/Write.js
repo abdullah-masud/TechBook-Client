@@ -11,43 +11,48 @@ const Write = () => {
     const imageStorageKey = '17b42be990566269a9132b2782f7586f';
 
     const onSubmit = data => {
-        const image = data.image[0];
-        const formData = new FormData();
-        formData.append('image', image);
-        const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
-        fetch(url, {
-            method: 'POST',
-            body: formData,
-        })
-            .then(res => res.json())
-            .then(result => {
-                if (result.success) {
-                    const img = result.data.url;
-                    const blog = {
-                        title: data.title,
-                        description: data.description,
-                        category: data.category.toLowerCase(),
-                        image: img,
-                        email: user?.email
+        if (data?.category !== 'Choose') {
+            const image = data.image[0];
+            const formData = new FormData();
+            formData.append('image', image);
+            const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+            fetch(url, {
+                method: 'POST',
+                body: formData,
+            })
+                .then(res => res.json())
+                .then(result => {
+                    if (result.success) {
+                        const img = result.data.url;
+                        const blog = {
+                            title: data.title,
+                            description: data.description,
+                            category: data.category.toLowerCase(),
+                            image: img,
+                            email: user?.email
+                        }
+                        // send to DB
+                        fetch('http://localhost:5000/blog', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(blog)
+                        })
+                            .then(res => res.json())
+                            .then(inserted => {
+                                if (inserted.insertedId) {
+                                    toast.success('Blog Added Successfully')
+                                }
+                            })
 
                     }
-                    // send to DB
-                    fetch('http://localhost:5000/blog', {
-                        method: 'POST',
-                        headers: {
-                            'content-type': 'application/json'
-                        },
-                        body: JSON.stringify(blog)
-                    })
-                        .then(res => res.json())
-                        .then(inserted => {
-                            if (inserted.insertedId) {
-                                toast.success('Blog Added Successfully')
-                            }
-                        })
+                })
+        }
+        else {
+            toast.error("You didn't choose Category")
+        }
 
-                }
-            })
     };
 
 
@@ -61,7 +66,7 @@ const Write = () => {
                     </label>
                     <input
                         type="file"
-                        className="input  w-full max-w-xl pt-1"
+                        className="input w-full max-w-xl pt-1"
                         {...register("image", {
                             required: {
                                 value: true,
@@ -104,6 +109,7 @@ const Write = () => {
                 <select
                     {...register("category")}
                     className="select mb-5 input  w-full max-w-xl">
+                    <option disabled selected>Choose</option>
                     <option>Programming</option>
                     <option>Food</option>
                     <option>Travel</option>

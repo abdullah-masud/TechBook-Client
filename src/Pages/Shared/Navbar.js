@@ -2,9 +2,27 @@ import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
+import defaultImage from '../../assets/images/defaultImage.png'
+import { useQuery } from "react-query";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
     const [user, Loading, error] = useAuthState(auth);
+    const [profile, setProfile] = useState([])
+
+    /*  const { data: profile, isLoading } = useQuery('profile', () => fetch(`http://localhost:5000/userProfile?email=${user?.email}`)
+         .then(res => res.json())
+     )
+ 
+     if (isLoading) {
+         return <Loading />
+     } */
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/userProfile?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setProfile(data))
+    }, [user?.email])
 
     const logout = () => {
         signOut(auth);
@@ -14,7 +32,6 @@ const Navbar = () => {
         <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-base mr-6"><Link to='/'>Home</Link></li>
         <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-base mr-6"><Link to='/blogs'>Blogs</Link></li>
         <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-base mr-6"><Link to='/write'>Write</Link></li>
-        <li className="hover:text-accent hover:underline cursor-pointer font-semibold text-base"><Link to='/about'>About</Link></li>
     </>
     return (
         <div className="navbar bg-[#f1f1f1] max-w-7xl mx-auto  ">
@@ -38,7 +55,7 @@ const Navbar = () => {
                 <div className="dropdown dropdown-end">
                     <label tabIndex="1" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
-                            <img src="https://placeimg.com/80/81/people" alt="" />
+                            <img src={profile[0]?.displayPicture ? profile[0]?.displayPicture : defaultImage} alt="" />
                         </div>
                     </label>
                     <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
