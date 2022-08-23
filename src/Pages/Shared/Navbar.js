@@ -10,14 +10,6 @@ const Navbar = () => {
     const [user, Loading, error] = useAuthState(auth);
     const [profile, setProfile] = useState([])
 
-    /*  const { data: profile, isLoading } = useQuery('profile', () => fetch(`http://localhost:5000/userProfile?email=${user?.email}`)
-         .then(res => res.json())
-     )
- 
-     if (isLoading) {
-         return <Loading />
-     } */
-
     useEffect(() => {
         fetch(`http://localhost:5000/userProfile?email=${user?.email}`)
             .then(res => res.json())

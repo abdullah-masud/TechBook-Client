@@ -4,7 +4,6 @@ import Navbar from './Pages/Shared/Navbar';
 import Home from './Pages/Home/Home'
 import Blogs from './Pages/Blogs/Blogs';
 import Write from './Pages/Write/Write';
-import About from './Pages/About/About';
 import Footer from './Pages/Shared/Footer';
 import FullBlog from './Pages/FullBlog/FullBlog';
 import Login from './Pages/Login/Login';
