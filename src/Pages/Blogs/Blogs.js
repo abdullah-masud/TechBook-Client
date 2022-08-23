@@ -27,7 +27,7 @@ const Blogs = () => {
                     blogs?.map(blog => <Blog
                         key={blog._id}
                         blog={blog}
-                    />)
+                    />).reverse()
                 }
             </div>
             <div className="lg:divider lg:divider-horizontal"></div>

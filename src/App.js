@@ -12,6 +12,8 @@ import Signup from './Pages/Login/Signup';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAuth from './Pages/Shared/RequireAuth';
+import Profile from './Pages/Profile/Profile';
+import MyBlogs from './Pages/MyBlogs/MyBlogs';
 
 function App() {
 
@@ -27,6 +29,8 @@ function App() {
         <Route path='fullBlog/:blogId' element={<FullBlog />} />
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<Signup />} />
+        <Route path='profile' element={<RequireAuth><Profile /></RequireAuth>} />
+        <Route path='myblogs' element={<RequireAuth><MyBlogs /></RequireAuth>} />
       </Routes>
       <ToastContainer />
       <Footer />

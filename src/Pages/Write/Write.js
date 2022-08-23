@@ -1,8 +1,11 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from '../../firebase.init';
 
 const Write = () => {
+    const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const imageStorageKey = '17b42be990566269a9132b2782f7586f';
@@ -25,6 +28,7 @@ const Write = () => {
                         description: data.description,
                         category: data.category.toLowerCase(),
                         image: img,
+                        email: user?.email
 
                     }
                     // send to DB
@@ -100,11 +104,11 @@ const Write = () => {
                 <select
                     {...register("category")}
                     className="select mb-5 input  w-full max-w-xl">
-                    <option disabled defaultValue selected>Choose</option>
                     <option>Programming</option>
                     <option>Food</option>
                     <option>Travel</option>
                 </select>
+
 
                 {/* Body Field Starts */}
                 <div className="form-control w-full">

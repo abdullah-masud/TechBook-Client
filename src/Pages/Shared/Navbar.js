@@ -43,8 +43,14 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                         <li className="text-1xl font-semibold text-primary ml-4">{user?.displayName}</li>
-                        <li><Link to='#'>Profile</Link></li>
-                        <li><Link to='#'>My Blogs</Link></li>
+
+                        {
+                            user &&
+                            <>
+                                <li><Link to='/profile'>Profile</Link></li>
+                                <li><Link to='/myblogs'>My Blogs</Link></li>
+                            </>
+                        }
                         <li>
                             {
                                 user ?

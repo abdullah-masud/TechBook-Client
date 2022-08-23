@@ -114,7 +114,7 @@ body {
 }
 
 .blogCard .description h1 {
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     line-height: 1;
     /* margin: 0; */
     font-size: 1.7rem;
@@ -179,6 +179,16 @@ body {
     left: 0%;
 }
 
+@media only screen and (max-width: 376px) and (min-width: 374px) {
+    .blogCard .description h1 {
+        /* margin-bottom: 15px; */
+        line-height: 1;
+        /* margin: 0; */
+        font-size: 1.3rem;
+    }
+}
+
+
 @media (min-width: 640px) {
     .blogCard {
         flex-direction: row;
@@ -193,6 +203,7 @@ body {
     .blogCard .description {
         flex-basis: 60%;
     }
+
 
     .blogCard .description:before {
         transform: skewX(-3deg);
@@ -219,4 +230,6 @@ body {
     .blogCard.alt .details {
         padding-left: 25px;
     }
+
+
 }
