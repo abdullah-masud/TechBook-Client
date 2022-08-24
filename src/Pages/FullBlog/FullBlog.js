@@ -13,7 +13,6 @@ const FullBlog = () => {
 
     const { title, image, description } = blog
 
-
     return (
         <div className='max-w-7xl mx-auto mt-4 mb-12 px-3'>
             <div className='lg:my-20'>
