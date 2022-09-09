@@ -7,14 +7,14 @@ const Blogs = () => {
     const getFilteredBlogs = (category) => {
         console.log(category)
         const blogCategory = category
-        const url = `http://localhost:5000/categoryblogs?category=${blogCategory}`;
+        const url = `https://techbook-server.onrender.com/categoryblogs?category=${blogCategory}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setBlogs(data))
     }
 
     const getAllBlogs = () => {
-        const url = `http://localhost:5000/allblogs`;
+        const url = `https://techbook-server.onrender.com/allblogs`;
         fetch(url)
             .then(res => res.json())
             .then(data => setBlogs(data))

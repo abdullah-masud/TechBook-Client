@@ -14,7 +14,7 @@ const Profile = () => {
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`http://localhost:5000/userProfile?email=${user?.email}`)
+    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`https://techbook-server.onrender.com/userProfile?email=${user?.email}`)
         .then(res => res.json())
     )
 
@@ -41,7 +41,7 @@ const Profile = () => {
                     const userDp = {
                         displayPicture: displayPicture,
                     }
-                    fetch(`http://localhost:5000/user/${user?.email}`, {
+                    fetch(`https://techbook-server.onrender.com/user/${user?.email}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'

@@ -6,7 +6,7 @@ const FullBlog = () => {
     const [blog, setBlog] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allblogs/${blogId}`)
+        fetch(`https://techbook-server.onrender.com/allblogs/${blogId}`)
             .then(res => res.json())
             .then(data => setBlog(data))
     }, [blogId])

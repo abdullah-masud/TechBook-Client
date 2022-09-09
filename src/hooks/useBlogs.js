@@ -5,7 +5,7 @@ const useBlogs = () => {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/allblogs')
+        axios.get('https://techbook-server.onrender.com/allblogs')
             .then(data => setBlogs(data.data))
     }, [])
 

@@ -32,7 +32,7 @@ const Write = () => {
                             email: user?.email
                         }
                         // send to DB
-                        fetch('http://localhost:5000/blog', {
+                        fetch('https://techbook-server.onrender.com/blog', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

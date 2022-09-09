@@ -11,7 +11,7 @@ const Navbar = () => {
     const [profile, setProfile] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/userProfile?email=${user?.email}`)
+        fetch(`https://techbook-server.onrender.com/userProfile?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setProfile(data))
     }, [user?.email])

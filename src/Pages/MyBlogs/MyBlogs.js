@@ -8,7 +8,7 @@ const MyBlogs = () => {
     const [myBlogs, setMyBlogs] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/profileBlogs?email=${user?.email}`)
+        fetch(`https://techbook-server.onrender.com/profileBlogs?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyBlogs(data))
     }, [myBlogs, user?.email])
